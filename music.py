@@ -31,12 +31,12 @@ class music(commands.Cog):
             source = await discord.FFmpegOpusAudio.from_probe(url2, **FFMPEG_OPTIONS)
             vc.play(source)
 
-    @commands.commands()
+    @commands.command()
     async def pause(self,ctx):
         await ctx.voice_client.pause()
         await ctx.send("Paused ⏸️")
 
-    @commands.commands()
+    @commands.command()
     async def resume(self, ctx):
         await ctx.voice_client.pause()
         await ctx.send("Resumed ▶️")
